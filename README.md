@@ -14,7 +14,7 @@ No telegram account or api_id required.
 ## Installation (example for deb-based distro)
 Install the dependencies, if needed:
 ```
-$ sudo apt install curl libnotify python3-gssapi ffmpeg
+sudo apt install curl libnotify python3-gssapi ffmpeg
 ```
 Make the **.local/bin** directory if not exists (optional, just for launching the script without specifying full path) 
 ```
