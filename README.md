@@ -6,6 +6,8 @@ Can send desktop notifications via libnotify and perform text-to-speech conversi
 
 No telegram account or api_id required.
 
+![screenshot](screenshot.png)
+
 ## Dependencies
 - curl
 - libnotify (optional, for desktop notifications)
@@ -29,7 +31,7 @@ chmod u+x tgchecker.sh
 
 ## Usage
 ```
-Usage: tgchecker [OPTIONS] https://t.me/s/channel_name
+Usage: tgchecker.sh [OPTIONS] https://t.me/s/channel_name
 Options:
 	-t --timeout <sec>		Timeout between checks, seconds [default: 30]
 	-n --notify			Throw desktop notification
@@ -37,4 +39,13 @@ Options:
 	-l --lang <lang>		IETF language tag. Language to speak in. [default: en]
 	-i --intro <text>		Append text to be narrated before notification
 	-h --help			Show this help
+```
+## Usage examples
+On the first launch it will show 5 last messages. It may require quite a time to voice them. So, it's recommended to try without notifications first:
+```
+tgchecker.sh https://t.me/s/channel_name
+```
+Check every 60 seconds, throw desktop notifications and perform text-to-speech in ukrainian with intro text:
+```
+tgchecker.sh -t 60 -n -v -l uk -i "Нове сповіщення:" https://t.me/s/channel_name
 ```
