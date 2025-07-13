@@ -2,7 +2,7 @@
 
 Quick and dirty way to periodically check public telegram channel's preview URL and throw notifications on new posts.
 
-Can send desktop notifications via libnotify and perform text-to-speech conversion via python3-gssapi and ffmpeg.
+Can send desktop notifications via libnotify and perform text-to-speech conversion via python3-gtts and ffmpeg.
 
 No telegram account or api_id required.
 
@@ -16,7 +16,7 @@ No telegram account or api_id required.
 ## Installation (example for deb-based distro)
 Install the dependencies, if needed:
 ```
-sudo apt install curl libnotify python3-gssapi ffmpeg
+sudo apt install curl libnotify python3-gtts ffmpeg
 ```
 Make the **.local/bin** directory if not exists (optional, just for launching the script without specifying full path) 
 ```
