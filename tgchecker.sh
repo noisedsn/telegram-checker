@@ -4,7 +4,7 @@
 # and throw a notification on new posts.
 #
 # Can send desktop notifications via libnotify
-# and perform text-to-speech conversion via python3-gssapi and ffmpeg.
+# and perform text-to-speech conversion via python3-gtts and ffmpeg.
 #
 # No telegram account or api_id required.
 
