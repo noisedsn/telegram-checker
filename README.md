@@ -31,7 +31,7 @@ chmod u+x tgchecker.sh
 ```
 Usage: tgchecker [OPTIONS] https://t.me/s/channel_name
 Options:
-  -t --timeout <sec>		Timeout between checks, seconds [default: 30]
+	-t --timeout <sec>		Timeout between checks, seconds [default: 30]
 	-n --notify			Throw desktop notification
 	-v --voice			Perform text-to-speech conversion and play
 	-l --lang <lang>		IETF language tag. Language to speak in. [default: en]
