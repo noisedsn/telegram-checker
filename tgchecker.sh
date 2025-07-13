@@ -4,9 +4,9 @@
 # and throw a notification on new posts.
 #
 # Can send desktop notifications via libnotify
-# and perform text-to-speech conversion via python3-gtts and ffmpeg.
+# and perform text-to-speech conversion via python3-gssapi and ffmpeg.
 #
-# No telegram sign-up or api_id required.
+# No telegram account or api_id required.
 
 function tchelp {
 	echo "Usage: tgchecker [OPTIONS] https://t.me/s/channel_name"
