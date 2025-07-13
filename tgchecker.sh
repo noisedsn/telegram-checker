@@ -9,7 +9,7 @@
 # No telegram account or api_id required.
 
 function tchelp {
-	echo "Usage: tgchecker [OPTIONS] https://t.me/s/channel_name"
+	echo "Usage: tgchecker.sh [OPTIONS] https://t.me/s/channel_name"
 	echo "Options:"
 	echo "	-t --timeout <sec>		Timeout between checks, seconds [default: 30]"
 	echo "	-n --notify			Throw desktop notification"
