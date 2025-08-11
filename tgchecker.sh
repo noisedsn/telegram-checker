@@ -55,7 +55,7 @@ if [ ! "$INTRO" ]; then
 	INTRO=""
 fi
 
-name=$(echo $1 | sed -e 's/^.*\///g')
+name=$(echo $1 | sed 's/^.*\///g')
 
 file_mp3="/tmp/tgchecker_$name.mp3"
 file_txt="/tmp/tgchecker_$name.txt"
@@ -71,9 +71,10 @@ while true; do
 	new=$(curl -s $1 | 
 			grep 'tgme_widget_message_text' | 
 			tail -n 5 | 
-			sed -e 's/<[^>]*>/ /g' -e 's/  */ /g' -e 's/^ //g' -e 's/@.*//g' -e 's/&#33;/!/g')
+			sed -e 's/<[^>]*>/ /g; s/  */ /g; s/^ //g; s/@.*//g;' \
+				-e 's/&#33;/!/g; s/&lt;/</g; s/&gt;/>/g; s/&amp;/&/g; s/&quot;/"/g; s/&nbsp;/ /g;')
 
-	diff=$(diff -U0 <(echo "$old") <(echo "$new") | grep ^+ | grep -v ^+++ | sed -e s/.//)
+	diff=$(diff -U0 <(echo "$old") <(echo "$new") | grep ^+ | grep -v ^+++ | sed s/.//)
 
 	if [ ! -z "$new" ]; then
 		old=$new;
