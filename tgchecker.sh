@@ -57,8 +57,8 @@ fi
 
 name=$(echo $1 | sed 's/^.*\///g')
 
-file_mp3="/tmp/tgchecker_$name.mp3"
-file_txt="/tmp/tgchecker_$name.txt"
+file_mp3="/var/tmp/tgchecker_$name.mp3"
+file_txt="/var/tmp/tgchecker_$name.txt"
 
 if ! test -e $file_txt; then
 	touch $file_txt
@@ -72,7 +72,7 @@ while true; do
 			grep 'tgme_widget_message_text' | 
 			tail -n 5 | 
 			sed -e 's/<[^>]*>/ /g; s/  */ /g; s/^ //g; s/@.*//g;' \
-				-e 's/&#33;/!/g; s/&lt;/</g; s/&gt;/>/g; s/&amp;/&/g; s/&quot;/"/g; s/&nbsp;/ /g;')
+				-e 's/&#33;/!/g; s/&lt;/</g; s/&gt;/>/g; s/&amp;/&/g; s/&quot;/"/g; s/&#39;/'\''/g; s/&nbsp;/ /g;')
 
 	diff=$(diff -U0 <(echo "$old") <(echo "$new") | grep ^+ | grep -v ^+++ | sed s/.//)
 
